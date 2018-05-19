@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/cn/appsys/controller/backend=UTF-8
+encoding//src/cn/appsys/controller/developer=UTF-8
+encoding//src/cn/appsys/dao/appcategory=UTF-8
+encoding//src/cn/appsys/dao/appinfo=UTF-8
+encoding//src/cn/appsys/dao/appversion=UTF-8
+encoding//src/cn/appsys/dao/backenduser=UTF-8
+encoding//src/cn/appsys/dao/datadictionary=UTF-8
+encoding//src/cn/appsys/dao/devuser=UTF-8
+encoding//src/cn/appsys/pojo=UTF-8
+encoding//src/cn/appsys/service/backend=UTF-8
+encoding//src/cn/appsys/service/developer=UTF-8
+encoding//src/cn/appsys/tools=UTF-8
