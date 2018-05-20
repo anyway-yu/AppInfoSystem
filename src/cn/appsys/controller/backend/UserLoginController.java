@@ -16,12 +16,20 @@ import cn.appsys.tools.Constants;
 public class UserLoginController {
 	@Resource
 	BackendUserService backendUserService;
-	
+
 	@RequestMapping("/login")
 	public String login() {
 		return "backendlogin";
 	}
-	
+
+	/**
+	 * 后台登陆
+	 * @param userCode
+	 * @param userPassword
+	 * @param request
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/dologin")
 	public String dologin(@RequestParam String userCode,@RequestParam String userPassword,HttpServletRequest request,HttpSession session) {
 		BackendUser backendUser = null;
@@ -39,7 +47,12 @@ public class UserLoginController {
 			return "backendlogin";
 		}
 	}
-	
+
+	/**
+	 * session为空就重新登陆
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/backend/main")
 	public String main(HttpSession session) {
 		if(session.getAttribute(Constants.USER_SESSION) == null) {
@@ -47,11 +60,16 @@ public class UserLoginController {
 		}
 		return "backend/main";
 	}
-	
+
+	/**
+	 * 后台退出
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/logout")
 	public String lonout(HttpSession session) {
 		session.removeAttribute(Constants.USER_SESSION);
 		return "backendlogin";
 	}
-	
+
 }

@@ -15,7 +15,7 @@ import cn.appsys.tools.Constants;
 @Controller
 @RequestMapping("/devuser")
 public class DevLoginController {
-/*	private Logger logger = Logger.getLogger(DevLoginController.class);*/
+	/*	private Logger logger = Logger.getLogger(DevLoginController.class);*/
 
 	@Resource
 	DevUserService devUserService;
@@ -24,7 +24,14 @@ public class DevLoginController {
 	public String login() {
 		return "devlogin";
 	}
-
+	/**
+	 * 前台登陆
+	 * @param devCode
+	 * @param devPassword
+	 * @param request
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/dologin")
 	public String dologin(@RequestParam String devCode,@RequestParam String devPassword,HttpServletRequest request,HttpSession session) {
 		DevUser devUser = null;
@@ -42,7 +49,12 @@ public class DevLoginController {
 			return "devlogin";
 		}
 	}
-
+	
+	/**
+	 * session为空就重新登陆
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/main")
 	public String mian(HttpSession session) {
 		if(session.getAttribute(Constants.DEV_USER_SESSION) == null) {
@@ -62,7 +74,7 @@ public class DevLoginController {
 		session.removeAttribute(Constants.DEV_USER_SESSION);
 		return "devlogin";
 	}
-	
-	
+
+
 }
 
